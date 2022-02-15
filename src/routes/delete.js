@@ -5,6 +5,8 @@ Carregando módulos
 const express = require('express')
 const router = express.Router()
 const ControllerTransacao = require('../controller/ControllerTransacao')
+const jwt = require('jsonwebtoken')
+const SECRET = 'appweb2'
 
 /********************************************
 Configurações 
@@ -16,7 +18,7 @@ router.use(express.static('public'));
 Rotas
 *********************************************/
 
-router.get('/transacao/:id', async (req, res) =>{
+router.get('/transacao/:id', verificaJWT, async (req, res) =>{
     let id = req.params.id
     await ControllerTransacao.deletarTransacao(id)
     .then(function(response){
@@ -25,6 +27,22 @@ router.get('/transacao/:id', async (req, res) =>{
         })
     })
 })
+
+/********************************************
+Funções
+*********************************************/
+
+function verificaJWT(req, res, next){
+    console.log(req);
+    const token = req.headers['Authorization']
+    jwt.verify(token, SECRET, (err, decoded)=>{
+        if(err) return res.status(401)
+
+        req.userID = decoded.userID
+        next()
+    })
+}
+
 
 /********************************************
 Exportação
