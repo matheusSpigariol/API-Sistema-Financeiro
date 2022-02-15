@@ -56,10 +56,13 @@ Funções
 *********************************************/
 
 function verificaJWT(req, res, next){
-    console.log(req);
     const token = req.headers['Authorization']
     jwt.verify(token, SECRET, (err, decoded)=>{
-        if(err) return res.status(401)
+        if(err){
+            return res.status(401).json({
+                mensagem: 'Token inválido'
+            }).end()
+        }
 
         req.userID = decoded.userID
         next()

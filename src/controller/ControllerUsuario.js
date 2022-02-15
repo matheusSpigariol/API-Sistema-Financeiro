@@ -121,7 +121,6 @@ async function editarUsuario(id, nome, senha, email){
         }
         })
         .then(function(response){
-            console.log(response);
             verifica = response[0]
         })
 
