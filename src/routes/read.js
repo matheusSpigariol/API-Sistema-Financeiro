@@ -4,7 +4,8 @@ Carregando módulos
 
 const express = require('express')
 const router = express.Router()
-const ControllerTransacao = require('../controller/ControllerTransacao')
+const ControllerTransacao = require('../controller/ControllerTransacao');
+const ControllerUsuario = require('../controller/ControllerUsuario');
 const ControllerValores = require('../controller/ControllerValores')
 
 /********************************************
@@ -39,6 +40,15 @@ router.get('/transacoes/valores', async (req, res) =>{
         transacao  
     })
 })
+
+router.get('/usuario/:id', async (req, res) =>{
+    let id = req.params.id
+    usuario = await ControllerUsuario.listarUsuario(id)
+    res.json({
+        usuario  
+    })
+})
+
 
 /********************************************
 Exportação

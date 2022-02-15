@@ -6,6 +6,7 @@ const express = require('express')
 const router = express.Router()
 const ControllerTransacao = require('../controller/ControllerTransacao')
 const ControllerContatos = require('../controller/ControllerContatos')
+const ControllerUsuario = require('../controller/ControllerUsuario')
 
 
 /********************************************
@@ -32,6 +33,17 @@ router.post('/transacao', async (req, res) =>{
 router.post('/contato', async (req, res) =>{
     let{nome, email, mensagem} = req.body
     await ControllerContatos.criaContato(nome, email, mensagem)
+    .then(function(response){
+        res.json({
+            mensagem: response
+        })
+
+    })
+})
+
+router.post('/usuario', async (req, res) =>{
+    let{nome, senha, email} = req.body
+    await ControllerUsuario.criarUsuario(nome, senha, email)
     .then(function(response){
         res.json({
             mensagem: response

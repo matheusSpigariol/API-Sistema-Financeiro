@@ -8,6 +8,7 @@ const cadastro = require('./src/routes/create')
 const listar = require('./src/routes/read')
 const deletar = require('./src/routes/delete')
 const editar = require('./src/routes/update')
+const autorizacao = require('./src/routes/autorizacao')
 
 /********************************************
 Declaração da porta que o servidor irá rodar 
@@ -32,6 +33,8 @@ app.use('/listar', listar)
 app.use('/deletar', deletar)
 
 app.use('/editar', editar)
+
+app.use('/autorizacao', autorizacao)
 
 
 

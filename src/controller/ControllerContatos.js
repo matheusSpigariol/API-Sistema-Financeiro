@@ -3,9 +3,6 @@ Carregando módulos
 *********************************************/
 
 const Connection = require('../database/Connection')
-const ControllerTransacao = require('../controller/ControllerTransacao')
-const { strictEqual } = require('assert')
-const { stringify } = require('querystring')
 
 var ControllerContatos = {
     criaContato
@@ -21,11 +18,11 @@ async function criaContato(nome, email, mensagem){
         }
 
         if(!email){
-            throw new Error("É necessário informar o valor da transação")
+            throw new Error("É necessário informar o email")
         }
 
         if(!mensagem){
-            throw new Error("É necessário informar o tipo da transação")
+            throw new Error("É necessário informar a mensagem")
         }
 
         let verifica

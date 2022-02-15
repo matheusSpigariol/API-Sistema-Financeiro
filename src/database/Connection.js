@@ -68,12 +68,30 @@ const Contatos = sequelize.define('contatos', {
     }
 })
 
+const Usuarios = sequelize.define('usuarios', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    nome: {
+        type: Sequelize.TEXT
+    },
+    senha: {
+        type: Sequelize.TEXT
+    },
+    email: {
+        type: Sequelize.TEXT
+    }
+})
+
 
 
 var Connection = {
     Categorias,
     Transacao,
-    Contatos
+    Contatos,
+    Usuarios
 }
 
 
