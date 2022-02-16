@@ -9,6 +9,7 @@ const listar = require('./src/routes/read')
 const deletar = require('./src/routes/delete')
 const editar = require('./src/routes/update')
 const autorizacao = require('./src/routes/autorizacao')
+const bodyParser = require('body-parser')
 
 /********************************************
 Declaração da porta que o servidor irá rodar 
@@ -21,6 +22,7 @@ Configurações
 *********************************************/
 
 app.use(express.urlencoded({extended: true}));
+app.use(bodyParser.json())
 
 /********************************************
 Rotas
