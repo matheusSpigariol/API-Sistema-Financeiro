@@ -67,6 +67,24 @@ router.post('/logout', async (req, res) =>{
 })
 
 /********************************************
+Funções
+*********************************************/
+
+function verificaJWT(req, res, next){
+    const token = req.headers['x-access-token']
+    jwt.verify(token, SECRET, (err, decoded)=>{
+        if(err){
+            return res.status(401).json({
+                mensagem: 'Token inválido'
+            }).end()
+        }
+
+        req.userID = decoded.userID
+        next()
+    })
+}
+
+/********************************************
 Exportação
 *********************************************/
 module.exports = router
