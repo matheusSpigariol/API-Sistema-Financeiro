@@ -20,14 +20,14 @@ router.use(express.static('public'));
 Rotas
 *********************************************/
 
-router.get('/todas/transacoes', verificaJWT, async (req, res) =>{
+router.get('/todas/transacoes', async (req, res) =>{
     transacoes = await ControllerTransacao.listaTodasTransacoes()
     res.json({
         transacoes  
     })
 })
 
-router.get('/transacao/:id', verificaJWT, async (req, res) =>{
+router.get('/transacao/:id', async (req, res) =>{
     let id = req.params.id
     transacao = await ControllerTransacao.listaTransacao(id)
     res.json({
@@ -35,7 +35,7 @@ router.get('/transacao/:id', verificaJWT, async (req, res) =>{
     })
 })
 
-router.get('/transacoes/valores', verificaJWT, async (req, res) =>{
+router.get('/transacoes/valores', async (req, res) =>{
     let id = req.params.id
     transacao = await ControllerValores.getValores()
     res.json({
@@ -43,7 +43,7 @@ router.get('/transacoes/valores', verificaJWT, async (req, res) =>{
     })
 })
 
-router.get('/usuario/:id', verificaJWT, async (req, res) =>{
+router.get('/usuario/:id', async (req, res) =>{
     let id = req.params.id
     usuario = await ControllerUsuario.listarUsuario(id)
     res.json({

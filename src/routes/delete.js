@@ -18,7 +18,7 @@ router.use(express.static('public'));
 Rotas
 *********************************************/
 
-router.get('/transacao/:id', verificaJWT, async (req, res) =>{
+router.get('/transacao/:id', async (req, res) =>{
     let id = req.params.id
     await ControllerTransacao.deletarTransacao(id)
     .then(function(response){

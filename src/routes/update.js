@@ -19,7 +19,7 @@ router.use(express.static('public'));
 Rotas
 *********************************************/
 
-router.post('/transacao', verificaJWT, async (req, res) =>{
+router.post('/transacao', async (req, res) =>{
     let{id, titulo, valor, tipo, categoria} = req.body
     await ControllerTransacao.editarTransacao(id, titulo, valor, tipo, categoria)
     .then(function(response){
@@ -29,7 +29,7 @@ router.post('/transacao', verificaJWT, async (req, res) =>{
     })
 })
 
-router.post('/usuario', verificaJWT, async (req, res) =>{
+router.post('/usuario', async (req, res) =>{
     let{id,nome, senha, email} = req.body
     await ControllerUsuario.editarUsuario(id,nome, senha, email)
     .then(function(response){
