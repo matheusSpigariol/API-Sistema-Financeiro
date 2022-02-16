@@ -6,6 +6,7 @@ const express = require('express')
 const router = express.Router()
 const ControllerTransacao = require('../controller/ControllerTransacao')
 const ControllerUsuario = require('../controller/ControllerUsuario')
+const ControllerToken = require('../controller/ControllerToken')
 const jwt = require('jsonwebtoken')
 const SECRET = 'appweb2'
 
