@@ -85,13 +85,26 @@ const Usuarios = sequelize.define('usuarios', {
     }
 })
 
+const TokenBlacklist = sequelize.define('token-blacklist', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    token: {
+        type: Sequelize.TEXT
+    }
+})
+
+
 
 
 var Connection = {
     Categorias,
     Transacao,
     Contatos,
-    Usuarios
+    Usuarios,
+    TokenBlacklist
 }
 
 
