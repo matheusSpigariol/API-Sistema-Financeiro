@@ -7,7 +7,7 @@ const Connection = require('../database/Connection')
 
 var ControllerToken = {
     addTokenBlackList,
-    verificaToken
+    verificaTokenBlackList
 }
 
 async function addTokenBlackList(token){
@@ -24,21 +24,20 @@ async function addTokenBlackList(token){
     }
 }
 
-async function verificaToken(token){
+async function verificaTokenBlackList(token){
     try {
         
-        let status
         await Connection.TokenBlacklist.findAll({
             where: {
                 token
             }
         })
         .then(function(response){
-            status = response
+            if(response.length == 0){
+                throw new Error
+            }
         })
-
-        console.log(status);
-
+        
         return true
 
     } catch (error) {

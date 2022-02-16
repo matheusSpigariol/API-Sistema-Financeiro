@@ -32,7 +32,7 @@ router.post('/login', async (req, res) =>{
                 expiresIn: 1200
         })
 
-        let status = ControllerToken.verificaToken(token)
+        let status = ControllerToken.verificaTokenBlackList(token)
         if(!status){
             res.status(401).json({
                 mensagem: 'Token expirado'
@@ -54,7 +54,6 @@ router.post('/login', async (req, res) =>{
 router.post('/logout', async (req, res) =>{
     let {token} = req.body
     let status = ControllerToken.addTokenBlackList(token)
-
     if(status){
         res.json({
             mensagem: 'Logout efetuado com sucesso!' 
