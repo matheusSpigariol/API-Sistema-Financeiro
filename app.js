@@ -3,6 +3,7 @@ Carregando módulos
 *********************************************/
 
 const express = require("express")
+const cors = require('cors')
 const app = express()
 const cadastro = require('./src/routes/create')
 const listar = require('./src/routes/read')
@@ -23,6 +24,8 @@ Configurações
 
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json())
+app.use(cors())
+
 
 /********************************************
 Rotas
