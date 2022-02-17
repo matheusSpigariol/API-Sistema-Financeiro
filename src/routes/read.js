@@ -54,17 +54,17 @@ router.get('/usuario/:id', verificaJWT, async (req, res) =>{
 })
 
 router.get('/todas/categorias', verificaJWT, async (req, res) =>{
-    transacoes = await ControllerCategoria.listarTodasCategorias()
+    categorias = await ControllerCategoria.listarTodasCategorias()
     res.json({
-        transacoes  
+        categorias  
     })
 })
 
 router.get('/categoria/:id', verificaJWT, async (req, res) =>{
     let id = req.params.id
-    usuario = await ControllerCategoria.listarCategoria(id)
+    categoria = await ControllerCategoria.listarCategoria(id)
     res.json({
-        usuario  
+        categoria  
     })
 })
 
