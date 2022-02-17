@@ -45,7 +45,10 @@ async function cadastraTransacao (titulo, valor, tipo, categoria){
         })
 
         if(verifica){
-            return 'Cadastro de transação realizado com sucesso!'
+            return{
+                transacao: verifica.dataValues,
+                mnesagem: 'Cadastro de transação realizado com sucesso!'
+            } 
         }else{
             throw new Error("Não foi possivel editar a transação")
         }

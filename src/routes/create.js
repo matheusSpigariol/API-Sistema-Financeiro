@@ -27,7 +27,7 @@ router.post('/transacao', verificaJWT, async (req, res) =>{
     await ControllerTransacao.cadastraTransacao(titulo, valor, tipo, categoria)
     .then(function(response){
         res.json({
-            mensagem: response
+            response
         })
 
     })
