@@ -33,7 +33,7 @@ router.post('/transacao', verificaJWT, async (req, res) =>{
     })
 })
 
-router.post('/contato', verificaJWT, async (req, res) =>{
+router.post('/contato', async (req, res) =>{
     let{nome, email, mensagem} = req.body
     await ControllerContatos.criaContato(nome, email, mensagem)
     .then(function(response){
