@@ -4,6 +4,7 @@ Carregando módulos
 
 const express = require("express")
 const app = express()
+const cors = require('cors')
 const cadastro = require('./src/routes/create')
 const listar = require('./src/routes/read')
 const deletar = require('./src/routes/delete')
@@ -23,6 +24,7 @@ Configurações
 
 app.use(express.urlencoded({extended: true}));
 app.use(bodyParser.json())
+app.use(cors)
 
 /********************************************
 Rotas
