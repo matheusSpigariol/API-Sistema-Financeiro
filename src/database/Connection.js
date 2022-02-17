@@ -51,6 +51,10 @@ const Transacao = sequelize.define('transacoes',{
     }
 })
 
+
+
+
+
 const Contatos = sequelize.define('contatos', {
     id: {
         type: Sequelize.INTEGER,
@@ -67,6 +71,8 @@ const Contatos = sequelize.define('contatos', {
         type: Sequelize.TEXT
     }
 })
+
+
 
 const Usuarios = sequelize.define('usuarios', {
     id: {
@@ -85,6 +91,9 @@ const Usuarios = sequelize.define('usuarios', {
     }
 })
 
+
+
+
 const TokenBlacklist = sequelize.define('token-blacklist', {
     id: {
         type: Sequelize.INTEGER,
@@ -95,6 +104,8 @@ const TokenBlacklist = sequelize.define('token-blacklist', {
         type: Sequelize.TEXT
     }
 })
+
+
 
 
 

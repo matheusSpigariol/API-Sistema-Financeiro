@@ -56,7 +56,7 @@ CREATE TABLE `contatos` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,6 @@ CREATE TABLE `contatos` (
 
 LOCK TABLES `contatos` WRITE;
 /*!40000 ALTER TABLE `contatos` DISABLE KEYS */;
-INSERT INTO `contatos` VALUES (1,'Matheus Eduardo Spigariol','contato.matheused@gmail.com','teste','2022-02-14 21:58:13','2022-02-14 21:58:13'),(2,'Leonardo','leonardo@gmail.com','teste2','2022-02-14 22:20:48','2022-02-14 22:20:48');
 /*!40000 ALTER TABLE `contatos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +109,7 @@ CREATE TABLE `transacoes` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +118,6 @@ CREATE TABLE `transacoes` (
 
 LOCK TABLES `transacoes` WRITE;
 /*!40000 ALTER TABLE `transacoes` DISABLE KEYS */;
-INSERT INTO `transacoes` VALUES (7,'Conta de luz',50,'saida',4,'2022-02-14 21:00:18','2022-02-14 21:14:47'),(8,'Viagem',200,'saida',6,'2022-02-14 21:15:05','2022-02-14 22:14:14'),(9,'Compras',500,'saida',5,'2022-02-14 21:20:37','2022-02-14 21:20:37'),(10,'Compras',500,'saida',5,'2022-02-14 21:22:53','2022-02-14 21:22:53'),(11,'Salario do mes',5000,'entrada',1,'2022-02-14 21:47:08','2022-02-14 21:47:08'),(13,'Investimento bombcrypto',250,'entrada',1,'2022-02-15 21:26:43','2022-02-15 21:26:43'),(14,'Investimento bombcrypto',250,'entrada',1,'2022-02-15 21:34:45','2022-02-15 21:34:45'),(15,'Investimento bombcrypto',250,'entrada',1,'2022-02-15 21:36:23','2022-02-15 21:36:23'),(16,'Investimento bombcrypto',500,'entrada',1,'2022-02-15 21:36:31','2022-02-15 21:36:31'),(17,'Investimento bombcrypto',500,'entrada',1,'2022-02-15 21:37:59','2022-02-15 21:37:59');
 /*!40000 ALTER TABLE `transacoes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -138,7 +136,7 @@ CREATE TABLE `usuarios` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,7 +145,6 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (6,'Matheus Eduardo Spigariol','2c99884bd1d149755103104bab6b93ee','contato.matheused@gmail.com','2022-02-15 17:27:11','2022-02-15 17:43:38'),(7,'Matheus Eduardo','2149e70233847d9fb46230933f80cabd','matheuseduardospigariol@gmail.com','2022-02-15 17:44:00','2022-02-15 17:45:16');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -160,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-16  9:19:29
+-- Dump completed on 2022-02-17 20:11:40
