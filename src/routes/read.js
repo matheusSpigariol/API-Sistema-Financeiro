@@ -51,6 +51,21 @@ router.get('/usuario/:id', async (req, res) =>{
     })
 })
 
+router.get('/todas/categorias', verificaJWT, async (req, res) =>{
+    categorias = await ControllerCategoria.listarTodasCategorias()
+    res.json({
+        categorias  
+    })
+})
+
+router.get('/categoria/:id', verificaJWT, async (req, res) =>{
+    let id = req.params.id
+    categoria = await ControllerCategoria.listarCategoria(id)
+    res.json({
+        categoria  
+    })
+})
+
 /********************************************
 Funções
 *********************************************/
