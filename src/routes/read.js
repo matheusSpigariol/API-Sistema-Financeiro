@@ -7,6 +7,7 @@ const router = express.Router()
 const ControllerTransacao = require('../controller/ControllerTransacao');
 const ControllerUsuario = require('../controller/ControllerUsuario');
 const ControllerValores = require('../controller/ControllerValores')
+const ControllerCategoria = require('../controller/ControllerCategoria')
 const jwt = require('jsonwebtoken')
 const SECRET = 'appweb2'
 
@@ -51,14 +52,14 @@ router.get('/usuario/:id', async (req, res) =>{
     })
 })
 
-router.get('/todas/categorias', verificaJWT, async (req, res) =>{
+router.get('/todas/categorias', async (req, res) =>{
     categorias = await ControllerCategoria.listarTodasCategorias()
     res.json({
         categorias  
     })
 })
 
-router.get('/categoria/:id', verificaJWT, async (req, res) =>{
+router.get('/categoria/:id', async (req, res) =>{
     let id = req.params.id
     categoria = await ControllerCategoria.listarCategoria(id)
     res.json({
